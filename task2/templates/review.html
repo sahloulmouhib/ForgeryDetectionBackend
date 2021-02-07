@@ -1,0 +1,103 @@
+      {% extends "base.html" %}
+      {% block title %}Review{% endblock %}
+      {% block content %}
+
+
+      <style>
+          .login,
+          .image {
+              min-height: 100vh;
+          }
+
+          .bg-image {
+              background-image: url('https://picsum.photos/id/1079/1080');
+              background-size: cover;
+              background-position: center center;
+          }
+
+          .container-fluid {
+              max-width: 100%;
+          }
+
+          .account-form input {
+              border: 2px solid #ccc;
+              height: calc(2em + .75rem + 2px);
+          }
+
+          .account-form input:focus {
+              border-color: #1497ff;
+              box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.075), 0 0 0px rgba(255, 0, 0, 0.6);
+          }
+          
+
+
+
+
+          .topnav {
+  background-color: #343a40;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    font-family: system-ui;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+h1{
+    text-align: center;
+}
+.left
+{
+    float: right;
+}
+.greenBtn
+{
+    background: #4CAF50;
+    border: #4CAF50;
+}
+      </style>
+
+
+
+      <div class="container-fluid">
+       
+        
+          <div class="row no-gutter">
+              <div class="col-md-6 bg-light">
+                  <div class="login d-flex align-items-center py-5">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col-8 col-md-8  mx-auto">
+                                  <p class="h4 mb-4 font-weight-bold">Complete the form below </p>
+                                  <form action="{% url 'reviews' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                      {{ form.as_p }}
+                                      
+                                      <button class="greenBtn btn btn-dark btn-block py-2 mb-4 mt-5 font-weight-bold"
+                                          type="submit" value="Log-in">Submit</button>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 d-none d-md-flex "><img class="img-fluid"src="https://nationalcybersecuritysociety.org/wp-content/uploads/2019/02/icon-tax-fraud.png" alt=""></div>
+          </div>
+      </div>
+      {% endblock %}
