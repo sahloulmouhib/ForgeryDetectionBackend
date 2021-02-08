@@ -1,0 +1,7 @@
+
+source /home/mouhib/celeryTemp/virt/bin/activate
+
+celery -A core worker --loglevel=info
+
+python manage.py migrate
+python manage.py runserver

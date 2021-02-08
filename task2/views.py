@@ -29,10 +29,10 @@ def client_view(request) :
             name=my_form.cleaned_data['firstName']
             email=my_form.cleaned_data['email']
             print(my_form.cleaned_data['image'])
-            send_mail("Thank you "+name+ " for using Detectify","hello,you will recieve the real image once we complete processing it ","sahloulmouhib92@gmail.com",[email])
+            send_mail("Thank you "+name+" for using Detectify","hello,you will recieve the real image once we complete processing it ","sahloulmouhib92@gmail.com",[email])
             client=Client.objects.create(**my_form.cleaned_data)
             print (client.id)
-            sleepy.delay(client.id)
+            #sleepy.delay(client.id)
             return render(request , "waiting.html",my_context)
         else:
             
